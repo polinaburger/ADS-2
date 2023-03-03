@@ -30,11 +30,7 @@ double expn(double x, uint16_t count) {
   if (count < 1) {
     return 1;
   } else {
-    int a = 0;
-    for (int i = 0; i < count; i++) {
-      a = a + calcItem(x, i);
-    }
-    return a;
+    return calcItem(x, count) + expn(x, count-1);
   }
 }
 
